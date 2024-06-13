@@ -10,7 +10,33 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+ import {faker} from "@faker-js/faker";
+
+Cypress.Commands.add('login', (usuario, senha) => {
+     cy.get('#username').type(usuario)
+     cy.get('#password').type(senha)
+     cy.get('.woocommerce-form > .button').click()
+ })
+
+Cypress.Commands.add('preCadastro', (email,senha,primeiroNome,segundoNome) => {
+    cy.get('#reg_email').type(email)
+    cy.get('#reg_password').type(senha)
+    cy.get(':nth-child(4) > .button').click()
+    cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
+    cy.get('#account_first_name').type(primeiroNome)
+    cy.get('#account_last_name').type(segundoNome)
+    cy.get('.woocommerce-Button').click()
+});
+
+Cypress.Commands.add('detalhesConta', (nome,sobrenome,usuario) =>{
+    cy.get('#account_first_name').clear()
+    cy.get('#account_first_name').type(nome)
+    cy.get('#account_last_name').clear()
+    cy.get('#account_last_name').type(sobrenome)
+    cy.get('#account_display_name').clear()
+    cy.get('#account_display_name').type(usuario)
+    cy.get('.woocommerce-Button').click()
+})
 //
 //
 // -- This is a child command --
