@@ -1,0 +1,20 @@
+[
+    {
+        "nomeProduto": "Atlas Fitness Tank",
+        "tamanho": "M",
+        "cor": "Blue",
+        "quantidade": 3
+    },
+    {
+        "nomeProduto": "Sparta Gym Tank",
+        "tamanho": "L",
+        "cor": "Green",
+        "quantidade": 2
+    },
+    {
+        "nomeProduto": "Helios Endurance Tank",
+        "tamanho": "S",
+        "cor": "Blue",
+        "quantidade": 4
+    }
+]
